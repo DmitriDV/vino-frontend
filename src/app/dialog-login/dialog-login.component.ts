@@ -51,7 +51,7 @@ export class DialogLoginComponent implements OnInit {
 
     /** Login */
     login():void{
-        if (this.loginForm.valid) {
+        if (this.loginForm.valid && this.loginForm != null) {
             console.log(this.loginForm.value);
             this.http.get<any>("http://127.0.0.1:8000/webservice/php/usager/login/").subscribe(res=>{
                 console.log(res.data)
